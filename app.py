@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-from models import Item, ItemList   # import the Item and ItemList classes
+from endpoints import Item, ItemList   # import the Item and ItemList classes
 from flask_restful import Api
 from flask_jwt import JWT
 from security import authenticate, identity

@@ -20,12 +20,15 @@ class Item(Resource):
         if next(filter(lambda x: x['name'] == name, items), None) is not None:
             return {'message': "An item with name '{}' already exists.".format(name)}, 400
         data = request.get_json()
-        item = {'name': name, 'price': data['price']}
+        item = {'name': name, 'price': 12.99}
         items.append(item)
         return item, 201
 
     def delete(self, name):
         # app.logger.debug('DELETE %s', name)
+        # if you assign a value to variable of a function, it will be local
+        # even if it has the same name as a global variable (so, you need to use
+        # the global keyword)
         global items
         items = [item for item in items if item['name'] != name]
         return {'message': 'Item deleted'}, 200
