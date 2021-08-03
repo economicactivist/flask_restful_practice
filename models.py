@@ -44,7 +44,7 @@ class Item(Resource):
 class ItemList(Resource):
     def get(self):
         return {'items': items} if items else {'items': 'No items'}
-        
+
 
 
 
