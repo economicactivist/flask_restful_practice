@@ -14,7 +14,7 @@ username_mapping = {u.username: u for u in users}  #access dictionary by usernam
 userid_mapping = {u.id: u for u in users} #access dictionary by userid
 
 def authenticate(username, password): 
-    #compare user input to stored username and password (called by the 
+    #compare user input to stored username and password 
     user = username_mapping.get(username, None)
     #you can run into problems when comparing strings with each other
     #(e.g. ascii vs unicode, so use safe_str_cmp)
